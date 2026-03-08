@@ -1,0 +1,152 @@
+Test suite Practica02-test: RUNNING...
+
+Tests variables
+  Fórmula Tt [✔]
+  Fórumla Cr [✔]
+  Fórmula Cg [✔]
+Tests interpretacion
+  Fórmula Tt [✔]
+  Fórumla Cr [✔]
+  Fórmula Cg-True [✔]
+  Fórmula Cg-False [✔]
+Tests estadosPosibles
+  Fórmula Tt [✔]
+  Fórmula Cr [✔]
+  Fórmula Cg [✔]
+Tests modelos
+  Fórmula Tt [✔]
+  Fórmula Cr [✔]
+  Fórmula Cg [✔]
+Tests sonEquivalentes
+  Fórmulas Equivalentes [✘]
+  Fórmulas No Equivalentes [✘]
+Tests tautologia
+  Fórmula Tt [✘]
+  Fórmula Cr [✘]
+  Fórmula Cg [✘]
+Tests contradiccion
+  Fórmula Tt [✘]
+  Fórumla Cr [✘]
+  Fórmula Cg [✘]
+Tests consecuenciaLogica
+  Argumento válido [✘]
+  Argumento válido 2 [✘]
+  Argumento inválido [✘]
+  Gamma insatisfacible [✘]
+
+Failures:
+
+  src/Practica02.hs:70:29: 
+  1) Tests sonEquivalentes Fórmulas Equivalentes
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:70:29 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests sonEquivalentes/Fórmulas Equivalentes/" --seed 1021956058
+
+  src/Practica02.hs:70:29: 
+  2) Tests sonEquivalentes Fórmulas No Equivalentes
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:70:29 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests sonEquivalentes/Fórmulas No Equivalentes/" --seed 1021956058
+
+  src/Practica02.hs:74:14: 
+  3) Tests tautologia Fórmula Tt
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:74:14 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests tautologia/Fórmula Tt/" --seed 1021956058
+
+  src/Practica02.hs:74:14: 
+  4) Tests tautologia Fórmula Cr
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:74:14 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests tautologia/Fórmula Cr/" --seed 1021956058
+
+  src/Practica02.hs:74:14: 
+  5) Tests tautologia Fórmula Cg
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:74:14 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests tautologia/Fórmula Cg/" --seed 1021956058
+
+  src/Practica02.hs:78:17: 
+  6) Tests contradiccion Fórmula Tt
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:78:17 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests contradiccion/Fórmula Tt/" --seed 1021956058
+
+  src/Practica02.hs:78:17: 
+  7) Tests contradiccion Fórumla Cr
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:78:17 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests contradiccion/Fórumla Cr/" --seed 1021956058
+
+  src/Practica02.hs:78:17: 
+  8) Tests contradiccion Fórmula Cg
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:78:17 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests contradiccion/Fórmula Cg/" --seed 1021956058
+
+  src/Practica02.hs:82:22: 
+  9) Tests consecuenciaLogica Argumento válido
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:82:22 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests consecuenciaLogica/Argumento válido/" --seed 1021956058
+
+  src/Practica02.hs:82:22: 
+  10) Tests consecuenciaLogica Argumento válido 2
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:82:22 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests consecuenciaLogica/Argumento válido 2/" --seed 1021956058
+
+  src/Practica02.hs:82:22: 
+  11) Tests consecuenciaLogica Argumento inválido
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:82:22 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests consecuenciaLogica/Argumento inválido/" --seed 1021956058
+
+  src/Practica02.hs:82:22: 
+  12) Tests consecuenciaLogica Gamma insatisfacible
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at src/Practica02.hs:82:22 in Practica02-0.1.0.0-inplace:Practica02
+
+  To rerun use: --match "/Tests consecuenciaLogica/Gamma insatisfacible/" --seed 1021956058
+
+Randomized with seed 1021956058
+
+Finished in 0.0157 seconds
+25 examples, 12 failures
+Test suite Practica02-test: FAIL
+Test suite logged to: /home/danterca/TodoMaterias/S4/Logica/Practicas/LC2026-2-Practica02/dist-newstyle/build/x86_64-linux/ghc-9.4.8/Practica02-0.1.0.0/t/Practica02-test/test/Practica02-0.1.0.0-Practica02-test.log

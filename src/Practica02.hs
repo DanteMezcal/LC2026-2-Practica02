@@ -31,23 +31,43 @@ type Estado = [String]
 
 --Ejercicio 1
 variables :: Prop -> [String]
-variables = undefined
+variables (Cons _) = []
+variables (Not p) = noRep (variables p)
+variables (Or p q) = noRep (variables p ++ variables q)
+variables (And p q) = noRep (variables p ++ variables q)
+variables (Impl p q) = noRep (variables p ++ variables q)
+variables (Syss p q) = noRep (variables p ++ variables q)
+variables (Var p) = [p]
+
+--Funcion auxiliar para el ejercicio 1
+noRep :: Eq a => [a] -> [a]
+noRep [] = []
+noRep (x:xs) = if x `elem` xs
+    then noRep xs
+    else x : noRep xs
 
 --Ejercicio 2
 interpretacion :: Prop -> Estado -> Bool
-interpretacion = undefined
+interpretacion (Cons True) _ = True
+interpretacion (Cons False) _ = False
+interpretacion (Var p) i = p `elem` i
+interpretacion (Not p) i = not (interpretacion p i)
+interpretacion (Or p q) i = (interpretacion p i) || (interpretacion q i)
+interpretacion (And p q) i = (interpretacion p i) && (interpretacion q i)
+interpretacion (Impl p q) i = not (interpretacion p i) || (interpretacion q i)
+interpretacion (Syss p q) i = (interpretacion (Impl p q) i) && (interpretacion (Impl q p) i)
 
 --Ejercicio 3
 estadosPosibles :: Prop -> [Estado]
-estadosPosibles = undefined
+estadosPosibles prop = conjPotencia(variables prop)
 
 --Ejercicio 4
 modelos :: Prop -> [Estado]
-modelos = undefined
+modelos prop = [x | x <- (estadosPosibles prop), (interpretacion prop x)]
 
 --Ejercicio 5
 sonEquivalentes :: Prop -> Prop -> Bool
-sonEquivalentes = undefined
+sonEquivalentes phi1 phi2 = undefined
 
 --Ejercicio 6 
 tautologia :: Prop -> Bool
@@ -66,3 +86,5 @@ consecuenciaLogica = undefined
 conjPotencia :: [a] -> [[a]]
 conjPotencia [] = [[]]
 conjPotencia (x:xs) = [(x:ys) | ys <- conjPotencia xs] ++ conjPotencia xs
+
+f1 = Syss (Not (Or (Var "p") (Var "q"))) (And (Not (Var "p")) (Not (Var "q")))
