@@ -42,9 +42,9 @@ variables (Var p) = [p]
 --Funcion auxiliar para el ejercicio 1
 noRep :: Eq a => [a] -> [a]
 noRep [] = []
-noRep (x:xs) = if x `elem` xs
-    then noRep xs
-    else x : noRep xs
+noRep (x:xs)
+    | x `elem` xs = noRep xs
+    | otherwise = x : noRep xs
 
 --Ejercicio 2
 interpretacion :: Prop -> Estado -> Bool
@@ -67,11 +67,15 @@ modelos prop = [x | x <- (estadosPosibles prop), (interpretacion prop x)]
 
 --Ejercicio 5
 sonEquivalentes :: Prop -> Prop -> Bool
-sonEquivalentes phi1 phi2 = undefined
+sonEquivalentes phi1 phi2
+    | interpretacion (phi1) (variables phi2) == interpretacion (phi2) (variables phi1) = True
+    | otherwise = False
 
 --Ejercicio 6 
 tautologia :: Prop -> Bool
-tautologia = undefined
+tautologia phi
+    | False `elem` iterarInterpretaciones phi (estadosPosibles phi) = False
+    | otherwise = True
 
 --Ejercicio 7
 contradiccion :: Prop -> Bool
@@ -81,6 +85,10 @@ contradiccion = undefined
 consecuenciaLogica :: [Prop] -> Prop -> Bool
 consecuenciaLogica = undefined
 
+--Funcion auxiliar
+iterarInterpretaciones :: Prop -> [Estado] -> [Bool]
+iterarInterpretaciones prop (e:es) = interpretacion prop e : iterarInterpretaciones prop es
+iterarInterpretaciones _ [] = []
 
 --Funcion auxiliar
 conjPotencia :: [a] -> [[a]]
