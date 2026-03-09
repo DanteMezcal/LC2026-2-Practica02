@@ -40,6 +40,7 @@ variables (Syss p q) = noRep (variables p ++ variables q)
 variables (Var p) = [p]
 
 --Funcion auxiliar para el ejercicio 1
+--Regresa una lista que no cuenta con elementos repetidos
 noRep :: Eq a => [a] -> [a]
 noRep [] = []
 noRep (x:xs)
@@ -86,11 +87,13 @@ consecuenciaLogica :: [Prop] -> Prop -> Bool
 consecuenciaLogica = undefined
 
 --Funcion auxiliar
+--Regresa una lista con el resultado de interpretar la proposicion con cada estado posible
 iterarInterpretaciones :: Prop -> [Estado] -> [Bool]
 iterarInterpretaciones prop (e:es) = interpretacion prop e : iterarInterpretaciones prop es
 iterarInterpretaciones _ [] = []
 
 --Funcion auxiliar
+--Regresa la lista de todas las combinaciones posibles de los elementos de una lista dada, o su conjunto potencia
 conjPotencia :: [a] -> [[a]]
 conjPotencia [] = [[]]
 conjPotencia (x:xs) = [(x:ys) | ys <- conjPotencia xs] ++ conjPotencia xs

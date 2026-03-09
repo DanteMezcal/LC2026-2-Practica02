@@ -24,8 +24,8 @@ En esta sección deben eliminar esta línea de texto, borrar la leyenda "Integra
 
 + Carriche Arriaga Dante Raziel
     - No. de Cuenta: 322037461
-+ Integrante 2
-    - No. de Cuenta: 
++ Sánchez Pastrana Rafael
+    - No. de Cuenta: 322285930
 + Integrante 3
     - No. de Cuenta: 
 
