@@ -1,4 +1,5 @@
 module Practica02 where
+import System.Console.Haskeline (putHistory)
 
 --Sintaxis de la logica proposicional
 data Prop = Var String | Cons Bool | Not Prop
@@ -80,11 +81,14 @@ tautologia phi
 
 --Ejercicio 7
 contradiccion :: Prop -> Bool
-contradiccion = undefined
+contradiccion phi
+    | True `elem` iterarInterpretaciones phi (estadosPosibles phi) = False
+    | otherwise = True
 
 --Ejercicio 8
 consecuenciaLogica :: [Prop] -> Prop -> Bool
-consecuenciaLogica = undefined
+consecuenciaLogica gamma phi = 
+    tautologia (Impl (conjuncionLista gamma) phi)
 
 --Funcion auxiliar
 --Regresa una lista con el resultado de interpretar la proposicion con cada estado posible
@@ -99,3 +103,10 @@ conjPotencia [] = [[]]
 conjPotencia (x:xs) = [(x:ys) | ys <- conjPotencia xs] ++ conjPotencia xs
 
 f1 = Syss (Not (Or (Var "p") (Var "q"))) (And (Not (Var "p")) (Not (Var "q")))
+
+-- Funcion auxiliar
+-- Recibe una lista de fórmulas proposicionales y las une en una sola formula usando la conjunción.
+conjuncionLista :: [Prop] -> Prop
+conjuncionLista [] = Cons True
+conjuncionLista [p] = p
+conjuncionLista (p:ps) = And p (conjuncionLista ps)
