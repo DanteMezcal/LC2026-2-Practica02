@@ -1,5 +1,5 @@
 module Practica02 where
-import System.Console.Haskeline (putHistory)
+--import System.Console.Haskeline (putHistory)
 
 --Sintaxis de la logica proposicional
 data Prop = Var String | Cons Bool | Not Prop
